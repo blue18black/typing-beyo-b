@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BEYOOOOONDS</title>
+    
+    <style>
+    
+    .text-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .text-container label {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .marker {
+        background: #91dbf1;
+    }
+    
+    .text:focus, .text:focus-visible {
+        border: none;
+        outline: none;
+    }
+    .message {
+        display: block;
+        margin-top: 2rem;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .button {
+        margin-top: 1rem;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+    .hidden {
+        display: none;
+    }
+    
+    
+    .question{
+        margin:10px 0px;
+        text-align: center;
+        font-size: 20px;
+        display:flex;
+    }
+    .image{
+        text-align: center;
+        margin: 8px 0 10px 0;
+        width:200px;
+    }
+    .concre{
+        color:#BA3CB8;
+        padding-bottom: 10px;
+        margin:10px 0px;
+        width:150px
+    }
+    .common{
+        background-color:#BA3CB8;
+        padding:3px 10px;
+        border-radius: 40px;
+        color:white;
+        display: inline-block;
+    }
+    
+    .sub{
+        margin:3px 0px 3px 50px;
+        font-family: "Hiragino Kaku Gothic ProN";
+        font-size: 15px;
+    }
+    .text{
+        font-size: 28px;
+        text-align: center;
+        padding: 20px 0px;
+
+    }
+    .name{
+        font-size: 30px;
+    }
+    .note{
+        float:right;
+        padding-top:9px;
+        text-align: center;
+
+    }
+    .profile{
+        padding-top:50px;
+    }
+    .score{
+        display: inline-block;
+        text-align: center;
+    }
+
+    <!--inline-blockにすることでアイコンの幅が文字の幅になる-->
+    
+    .birth{
+        display:inline-block;
+    }
+    .blood{
+        display:inline-block;
+    }
+    .hometown{
+        display:inline-block;
+    }
+    #count{
+        padding: 20px 0px;
+        display: inline-block;
+        text-align: center;
+    }
+    
+
+    .left{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        text-decoration:none;
+        margin:6px 6px;
+        font-size: 15px;
+
+    }
+    .right{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        text-decoration:none;
+        margin:6px 6px;
+        font-size: 15px;
+    }
+    
+    .content{
+        display: flex;
+        justify-content: center;
+        width:1100px;
+    }
+    .comment{
+        font-size: 20px;
+        padding:3px 0px;
+        
+    }
+    .title{
+        font-size: 18px;
+        margin-top:30px;
+        color:#BA3CB8
+    }
+
+    /*消してもいい*/
+    .link{
+        padding:6px 30px;
+        border-radius:20px;
+        /*width:fit-content;*/
+        margin: 0 auto;
+        border:2px solid #BA3CB8;
+        color:#BA3CB8
+    }
+    .link:hover{
+        background-color: #BA3CB8;
+        color:white;
+
+    }
+    .left{
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .right{
+        width:50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .sub-button{
+        width:50%;
+        border-radius:20px;
+        color:white;
+        background-color: #BA3CB8;
+        text-decoration:none;
+        padding:5px 10px;
+
+    }
+    .sub-button:hover{
+        opacity: 0.8;
+        
+    }
+    .button {
+        width:300px;
+        cursor: pointer;
+        margin: 0 auto;
+        font-size: 18px;
+    
+        
+    }
+    .score2{
+        padding:3px 0px;
+        font-size: 20px;
+        border:2px solid #BA3CB8;
+        width:180px;
+        border-radius:20px;
+        margin: 19px auto;
+        
+    }
+
+    .oowaku{
+        border:2px solid #BA3CB8;
+        display: flex;
+        flex-direction: column;
+        width:500px;
+        margin:10px 10px;
+        border-radius: 20px;
+        
+    }
+    .left-wrapper{
+        width:40%;
+        
+    }
+    
+    .jacket{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .gazou{
+        width:80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin:10px 0px;
+        
+    }
+    
+    .right-wrapper{
+        width:60%;
+    }
+    .day{
+        color:#BA3CB8;
+        height:15%;
+        margin-right:16px;
+        margin-top:8px;
+        font-size: 13px;
+
+        /*この3つで要素の上下左右中央に文字がくる*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .hitokoto{
+        height:60%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right:16px;
+        color:#BA3CB8;
+        font-size: 13px;
+    }
+    .tobasu{
+        height:25%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .spotify{
+        background-color:#1DD05D;
+        border-radius:20px;
+        display: inline-block;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        padding:3px 8px 6px 8px;
+        color:white;
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
+    .spotify:hover{
+        opacity: 0.8;
+        background-color:#BA3CB8;
+    }
+    .youtube{
+        background-color: #F70000;
+        border-radius:20px;
+        display: inline-block;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        padding:3px 8px 6px 8px;
+        color:white;
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
+    .youtube:hover{
+        opacity: 0.8;
+        background-color:#BA3CB8;
+    }
+    .kyokumei{
+        background-color:#BA3CB8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color:white;
+        border-radius: 17px 17px 0px 0px;
+        font-size: 18px;
+    }
+    .naiyou{
+        display: flex;
+    }
+    .bi{
+        padding-right: 4px;
+    }
+    .left-button{
+        margin-right:10px;
+    }
+    .left-button:hover{
+        opacity: 0.8;
+
+    }
+
+
+    .startgamen{
+        margin-top: 15px;
+        text-align: center;
+        color:#BA3CB8;
+    }
+    .aasha{
+        width:400px
+    }
+    .taitoru{
+        font-size: 18px;
+        margin:16px 0px 16px 0px;
+    }
+    .botann{
+        background-color: #BA3CB8;
+        color:white;
+        border-radius: 20px;
+        border: none;
+        box-shadow: none;
+        padding:3px 8px;
+        font-size: 20px;
+    }
+    .tyuu{
+        font-size: 14px;
+        display: inline-block;
+        margin:16px auto;
+    }
+    .hidari{
+        text-align: left;
+    }
+    
+
+    
+
+    
+
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    
+
+    <div id="message" class="text-container">
+        <div class="message">
+            <div class="button">
+                <a href="https://blue18black.github.io/typing-beyo-a/" class="sub-button">もう一度プレイ</a>
+                <a href="https://blue18black.github.io/typing-home/" class="sub-button">ホームにもどる</a>
+            </div>
+            <h1 class="comment">メンバーを覚えたら曲を聴きまくろう<br>これがセカンドステップ by 管理人</h1>
+            <h1 class="title">おすすめ曲10選</h1>
+            <div class="content">
+                <div class="left">
+                    <div class="oowaku">
+                        <div id ="kyokumei1" class="kyokumei">LOVEマシーン</div>
+                        <div class="naiyou">
+                            <div class="left-wrapper">
+                                <div class="jacket">
+                                    <img id="gazou1" class="gazou" src="https://cdn.helloproject.com/img/release/m/864abb6c768242d432a70f4633ba2b1062d974c4.jpg">
+                                </div>
+                            </div>
+                            <div class="right-wrapper">
+                                <div id="day1" class="day">発売日</div>
+                                <div id ="hitokoto1" class="hitokoto">この曲は～あああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ</div>
+                                <div class="tobasu">
+                                    <div class="left-button">
+                                        <a id="spotify1" href="" class="spotify"><i class="bi bi-spotify"></i>Spotify</a>
+                                    </div>
+                                    <div class="right-button">
+                                        <a id="youtube1" href="" class="youtube"><i class="bi bi-youtube"></i>YouTubeMusic</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="oowaku">
+                        <div id ="kyokumei3" class="kyokumei">恋愛レボリューション21</div>
+                        <div class="naiyou">
+                            <div class="left-wrapper">
+                                <div class="jacket">
+                                    <img id="gazou3" class="gazou" src="https://cdn.helloproject.com/img/release/m/864abb6c768242d432a70f4633ba2b1062d974c4.jpg">
+                                </div>
+                            </div>
+                            <div class="right-wrapper">
+                                <div id="day3"class="day">発売日</div>
+                                <div id ="hitokoto3"class="hitokoto">この曲は～</div>
+                                <div class="tobasu">
+                                    <div class="left-button">
+                                        <a id="spotify3"href="" class="spotify"><i class="bi bi-spotify"></i>Spotify</a>
+                                    </div>
+                                    <div class="right-button">
+                                        <a id="youtube3"href="" class="youtube"><i class="bi bi-youtube"></i>YouTubeMusic</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="oowaku">
+                        <div id ="kyokumei5" class="kyokumei">ザ☆ピ〜ス！</div>
+                        <div class="naiyou">
+                            <div class="left-wrapper">
+                                <div class="jacket">
+                                    <img id="gazou5"class="gazou" src="https://cdn.helloproject.com/img/release/m/864abb6c768242d432a70f4633ba2b1062d974c4.jpg">
+                                </div>
+                            </div>
+                            <div class="right-wrapper">
+                                <div id="day5"class="day">発売日</div>
+                                <div id ="hitokoto5"class="hitokoto">この曲は～</div>
+                                <div class="tobasu">
+                                    <div class="left-button">
+                                        <a id="spotify5"href="" class="spotify"><i class="bi bi-spotify"></i>Spotify</a>
+                                    </div>
+                                    <div class="right-button">
+                                        <a id="youtube5"href="" class="youtube"><i class="bi bi-youtube"></i>YouTubeMusic</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="oowaku">
+                        <div id ="kyokumei7" class="kyokumei">ここにいるぜぇ！</div>
+                        <div class="naiyou">
+                            <div class="left-wrapper">
+                                <div class="jacket">
+                                    <img id="gazou7"class="gazou" src="https://cdn.helloproject.com/img/release/m/864abb6c768242d432a70f4633ba2b1062d974c4.jpg">
+                                </div>
+                            </div>
+                            <div class="right-wrapper">
+                                <div id="day7"class="day">発売日</div>
+                                <div id ="hitokoto7"class="hitokoto">この曲は～</div>
+                                <div class="tobasu">
+                                    <div class="left-button">
+                                        <a id="spotify7"href="" class="spotify"><i class="bi bi-spotify"></i>Spotify</a>
+                                    </div>
+                                    <div class="right-button">
+                                        <a id="youtube7"href="" class="youtube"><i class="bi bi-youtube"></i>YouTubeMusic</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="oowaku">
+                        <div id ="kyokumei9" class="kyokumei">シャボン玉</div>
+                        <div class="naiyou">
+                            <div class="left-wrapper">
+                                <div class="jacket">
+                                    <img id="gazou9"class="gazou" src="https://cdn.helloproject.com/img/release/m/864abb6c768242d432a70f4633ba2b1062d974c4.jpg">
+                                </div>
+                            </div>
+                            <div class="right-wrapper">
+                                <div id="day9"class="day">発売日</div>
+                                <div id ="hitokoto9"class="hitokoto">この曲は～</div>
+                                <div class="tobasu">
+                                    <div class="left-button">
+                                        <a id="spotify9"href="" class="spotify"><i class="bi bi-spotify"></i>Spotify</a>
+                                    </div>
+                                    <div class="right-button">
+                                        <a id="youtube9"href="" class="youtube"><i class="bi bi-youtube"></i>YouTubeMusic</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+
+
+
+                <div class="right">
+                    <div class="oowaku">
+                        <div id ="kyokumei2" class="kyokumei">わがまま 気のまま 愛のジョーク</div>
+                        <div class="naiyou">
+                            <div class="left-wrapper">
+                                <div class="jacket">
+                                    <img id="gazou2"class="gazou" src="https://cdn.helloproject.com/img/release/m/864abb6c768242d432a70f4633ba2b1062d974c4.jpg">
+                                </div>
+                            </div>
+                            <div class="right-wrapper">
+                                <div id="day2"class="day">発売日</div>
+                                <div id ="hitokoto2"class="hitokoto">この曲は～</div>
+                                <div class="tobasu">
+                                    <div class="left-button">
+                                        <a id="spotify2"href="" class="spotify"><i class="bi bi-spotify"></i>Spotify</a>
+                                    </div>
+                                    <div class="right-button">
+                                        <a id="youtube2"href="" class="youtube"><i class="bi bi-youtube"></i>YouTubeMusic</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="oowaku">
+                        <div id ="kyokumei4" class="kyokumei">What is LOVE？</div>
+                        <div class="naiyou">
+                            <div class="left-wrapper">
+                                <div class="jacket">
+                                    <img id="gazou4"class="gazou" src="https://cdn.helloproject.com/img/release/m/864abb6c768242d432a70f4633ba2b1062d974c4.jpg">
+                                </div>
+                            </div>
+                            <div class="right-wrapper">
+                                <div id="day4"class="day">発売日</div>
+                                <div id ="hitokoto4"class="hitokoto">この曲は～</div>
+                                <div class="tobasu">
+                                    <div class="left-button">
+                                        <a id="spotify4"href="" class="spotify"><i class="bi bi-spotify"></i>Spotify</a>
+                                    </div>
+                                    <div class="right-button">
+                                        <a id="youtube4"href="" class="youtube"><i class="bi bi-youtube"></i>YouTubeMusic</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="oowaku">
+                        <div id ="kyokumei6" class="kyokumei">ENDLESS SKY</div>
+                        <div class="naiyou">
+                            <div class="left-wrapper">
+                                <div class="jacket">
+                                    <img id="gazou6"class="gazou" src="https://cdn.helloproject.com/img/release/m/864abb6c768242d432a70f4633ba2b1062d974c4.jpg">
+                                </div>
+                            </div>
+                            <div class="right-wrapper">
+                                <div id="day6"class="day">発売日</div>
+                                <div id ="hitokoto6"class="hitokoto">この曲は～</div>
+                                <div class="tobasu">
+                                    <div class="left-button">
+                                        <a id="spotify6"href="" class="spotify"><i class="bi bi-spotify"></i>Spotify</a>
+                                    </div>
+                                    <div class="right-button">
+                                        <a id="youtube6"href="" class="youtube"><i class="bi bi-youtube"></i>YouTubeMusic</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="oowaku">
+                        <div id ="kyokumei8" class="kyokumei">泡沫サタデーナイト！</div>
+                        <div class="naiyou">
+                            <div class="left-wrapper">
+                                <div class="jacket">
+                                    <img id="gazou8"class="gazou" src="https://cdn.helloproject.com/img/release/m/864abb6c768242d432a70f4633ba2b1062d974c4.jpg">
+                                </div>
+                            </div>
+                            <div class="right-wrapper">
+                                <div id="day8"class="day">発売日</div>
+                                <div id ="hitokoto8"class="hitokoto">この曲は～</div>
+                                <div class="tobasu">
+                                    <div class="left-button">
+                                        <a id="spotify8"href="" class="spotify"><i class="bi bi-spotify"></i>Spotify</a>
+                                    </div>
+                                    <div class="right-button">
+                                        <a id="youtube8"href="" class="youtube"><i class="bi bi-youtube"></i>YouTubeMusic</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="oowaku">
+                        <div id ="kyokumei10" class="kyokumei">The Vision</div>
+                        <div class="naiyou">
+                            <div class="left-wrapper">
+                                <div class="jacket">
+                                    <img id="gazou10"class="gazou" src="https://cdn.helloproject.com/img/release/m/864abb6c768242d432a70f4633ba2b1062d974c4.jpg">
+                                </div>
+                            </div>
+                            <div class="right-wrapper">
+                                <div id="day10"class="day">発売日</div>
+                                <div id ="hitokoto10"class="hitokoto">この曲は～</div>
+                                <div class="tobasu">
+                                    <div class="left-button">
+                                        <a id="spotify10"href="" class="spotify"><i class="bi bi-spotify"></i>Spotify</a>
+                                    </div>
+                                    <div class="right-button">
+                                        <a id="youtube10"href="" class="youtube"><i class="bi bi-youtube"></i>YouTubeMusic</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script>
+        "use strict";
+
+        const questions=[
+            {name:"西田汐里", yomi:"nisidasiori", birth:"2003年6月7日", blood:"B型", hometown:"京都府", image:"https://cdn.helloproject.com/img/artist/m/1c328d56ff3b6bba81367edd501d59b33163291d.jpg"}, 
+            {name:"江口紗耶", yomi:"egutisaya", birth:"2003年8月1日", blood:"O型", hometown:"兵庫県", image:"https://cdn.helloproject.com/img/artist/m/54b0a8e6f145d06e52265c623655e77ba30bab95.jpg"}, 
+            {name:"高瀬くるみ", yomi:"takasekurumi", birth:"1999年3月16日", blood:"A型", hometown:"栃木県", image:"https://cdn.helloproject.com/img/artist/m/238294f3cf2afdb0ddbbef73f225a4afd2d892f6.jpg"}, 
+            {name:"前田こころ", yomi:"maedakokoro", birth:"2002年6月23日", blood:"A型", hometown:"埼玉県", image:"https://cdn.helloproject.com/img/artist/m/75b49e33a12d7ae1543a47162ab627e34eb9f908.jpg"}, 
+            {name:"岡村美波", yomi:"okamuraminami", birth:"2004年10月20日", blood:"O型", hometown:"大阪府", image:"https://cdn.helloproject.com/img/artist/m/9ede4a2997a79e717782e66cbed04eae5968a5a0.jpg"}, 
+            {name:"清野桃々姫", yomi:"kiyonomomohime", birth:"2004年12月22日", blood:"A型", hometown:"東京都", image:"https://cdn.helloproject.com/img/artist/m/472e6c445b5cf8f6e2985d9a45fbdc785599a754.jpg"}, 
+            {name:"平井美葉", yomi:"hiraimiyo", birth:"1999年12月11日", blood:"A型", hometown:"東京都", image:"https://cdn.helloproject.com/img/artist/m/0d9791f16bfca842495dab4c40902e0b6feb1159.jpg"}, 
+            {name:"小林萌花", yomi:"kobayasihonoka", birth:"2000年8月16日", blood:"A型", hometown:"東京都", image:"https://cdn.helloproject.com/img/artist/m/cc56824b172ceb53bf76e282a7fd5b87f18126b4.jpg"}, 
+            {name:"里吉うたの", yomi:"satoyosiutano", birth:"2000年9月22日", blood:"A型", hometown:"東京都", image:"https://cdn.helloproject.com/img/artist/m/16985848085f219a87ee8fde92669c192ce27425.jpg"}, 
+        ];
+
+        const information=[
+            {kyokumei:"眼鏡の男の子", 
+            gazou:"https://lh3.googleusercontent.com/flTeo_RMSUkc4rh_CLI_8QGp6JZ82YtAyceRoY5J3qpsDuw3cQrWoziioUxT4qn1R3hjykh2D3P7Mso=w544-h544-s-l90-rj", day:"2019年8月7日", hitokoto:"メジャーデビューシングルのうちの一曲。それぞれに役がある寸劇から始まり、ビヨーンズらしさを決定づけたとも言える楽曲。", 
+            spotify:"https://open.spotify.com/intl-ja/track/3kjDoNmigkeyTuRVpMEb5P?si=a826a86f5d124818", 
+            youtube:"https://music.youtube.com/watch?v=0t1-PT9EXUM&si=dHwroLXG5N08pOKz"}, 
+            {kyokumei:"ニッポンノD・N・A!", 
+            gazou:"https://lh3.googleusercontent.com/JzgqW4Wq1S0d_TaPgnWTpOCPpGalwexSJHdvNr14iuPpIv-AkAaaUBnOcaMiL8clDU1Sk2JSM0pdPMA=w544-h544-s-l90-rj", day:"2019年8月7日", hitokoto:"日本人特有の性質を歌にしている。この曲を聴いていると日本人口を覚えることができる。", 
+            spotify:"https://open.spotify.com/intl-ja/track/6iqTt6zchuYYZxrRWbX7r1?si=f010fadeb87745a0", 
+            youtube:"https://music.youtube.com/watch?v=5IcMpzJT3vQ&si=dZuPoL1W-5-3P7Th"}, 
+            {kyokumei:"GIRL ZONE", 
+            gazou:"https://lh3.googleusercontent.com/flTeo_RMSUkc4rh_CLI_8QGp6JZ82YtAyceRoY5J3qpsDuw3cQrWoziioUxT4qn1R3hjykh2D3P7Mso=w544-h544-s-l90-rj", day:"2019年8月7日", hitokoto:"BEYOOOOONDS内のユニットである「雨ノ森 川海」の楽曲で、作詞作曲大森靖子。歌詞が強め。", 
+            spotify:"https://open.spotify.com/intl-ja/track/4UMoVj9U2TaQA2f5PU3JFJ?si=1058f8487404485c", 
+            youtube:"https://music.youtube.com/watch?v=7RRUWEx3aXk&si=qoS_G2sO6DUKVpoS"}, 
+            {kyokumei:"都営大江戸線の六本木駅で抱きしめて", 
+            gazou:"https://lh3.googleusercontent.com/Pk3icbh6-RBSwqlnmQpP-z-JtW_lEediZXJ3mDwx8xh67BhiSUwAkuFqkDTBdCo90Kj_bEeecF6V6o7r=w544-h544-s-l90-rj", day:"2019年8月7日", hitokoto:"BEYOOOOONDS内のユニットである「CHICA#TETSU」の楽曲。アイドルらしいかわいい系楽曲。", 
+            spotify:"https://open.spotify.com/intl-ja/track/7HVHLO8ZlVgjaGUBqG3O2D?si=da34237778e94a6d", 
+            youtube:"https://music.youtube.com/watch?v=lX6hN4DJqTc&si=7p6wPK7adWA4NuwF"}, 
+            {kyokumei:"ビタミンME", 
+            gazou:"https://lh3.googleusercontent.com/1Cgj7PdC7Sb0uwEedhKcUYIr92LXZ8_dSrvNJBTd5apFa4RzBbBgxcONRGGkZXE0fTiulI8r57wnsWtbIQ=w544-h544-l90-rj", day:"2021年3月3日", hitokoto:"カゴメとのコラボで生まれた楽曲。衣装がチアで、聴くだけでそこらへんのサプリよりビタミンが摂取できる曲。", 
+            spotify:"https://open.spotify.com/intl-ja/track/5klOkMQcUOkCP8JvJWtC9q?si=389e5805810f48a2", 
+            youtube:"https://music.youtube.com/watch?v=nEoWWbsxffM&si=Y2pw0tw5FBtgjq55"}, 
+            {kyokumei:"英雄～笑って！ショパン先輩～", 
+            gazou:"https://lh3.googleusercontent.com/ocJd64Tr4Z_m1YDfa8DDFQaxxGFUeht1Y5SsqFQBdFZVenj4WrqI0hfygNIqxmMSXn03K4PF8L-BOfI=w544-h544-s-l90-rj", day:"2022年3月2日", hitokoto:"ショパンの「英雄ポロネーズ」と「ノクターン」を使用し、クラシックに歌詞をつけちゃった系楽曲。", 
+            spotify:"https://open.spotify.com/intl-ja/track/5RBrN5fRBS6QGHy8u8dGOd?si=a3838728a4ab49cf", 
+            youtube:"https://music.youtube.com/watch?v=aBHJ2JdD7A8&si=b2jHqrt5oppKHrDR"}, 
+            {kyokumei:"ハムカツ黙示録", 
+            gazou:"https://lh3.googleusercontent.com/ocJd64Tr4Z_m1YDfa8DDFQaxxGFUeht1Y5SsqFQBdFZVenj4WrqI0hfygNIqxmMSXn03K4PF8L-BOfI=w544-h544-s-l90-rj", day:"2022年3月2日", hitokoto:"ヲタクがハムカツを選んで食べる理由となる楽曲。アンガーマネジメントの方法も学べる。", 
+            spotify:"https://open.spotify.com/intl-ja/track/4TDHoQNguVN8AwwIAVUd3A?si=79c657674a5c409a", 
+            youtube:"https://music.youtube.com/watch?v=_-moDNLSiyA&si=gDpk1kt35UodVgKq"},
+            {kyokumei:"涙のカスタネット", 
+            gazou:"https://lh3.googleusercontent.com/tKoab-90pAtebtRWbWXtgNkQ2BGLKvGJaBW42SUF7LW9SvoycDHuMpQ4QGSJuRgot280OCJXichc96kV=w544-h544-s-l90-rj", day:"2022年9月28日", hitokoto:"コロナ禍で声を出せないならカスタネットを叩こうぜということで作られた曲。この曲のためにカスタネットを持っていく必要があるが、公式のカスタネットは値段が高めらしい。", 
+            spotify:"https://open.spotify.com/intl-ja/track/5Lq2s7MQuBovEsuLLeB99b?si=6c6b811af48b45e6", 
+            youtube:"https://music.youtube.com/watch?v=1PRIukq1zwQ&si=pbh4onmyo4OcAcks"},
+            {kyokumei:"灰toダイヤモンド", 
+            gazou:"https://lh3.googleusercontent.com/k8_aQvx6tGLhmyKbMAujOTgNxR4aNT9d7zZlurIo0zZSxGtkxkPs_oWXpm7uzLDQAjwlwg-9iC6_NPI=w544-h544-l90-rj", day:"2024年5月29日", hitokoto:"トークボックスやピアノ、ラップやそれぞれの声色などそれぞれの個性を活かし、レベルが高いBEYOOOOONDSだからこそできるグルーヴ感が半端ない曲。", 
+            spotify:"https://open.spotify.com/intl-ja/track/4cG2g16FLIxzKnPWcpy5nx?si=6fcc95d34c684179", 
+            youtube:"https://music.youtube.com/watch?v=9piPx49WPHg&si=2UJ3OK2FfFgsxa9y"},
+            {kyokumei:"Do-Did-Done", 
+            gazou:"https://lh3.googleusercontent.com/6ajmM1WOnQKMu9BomZbZauM1VAoTqXH6LqzW1fCw0ACckAsY7aq0YIXULTeSxToKsoTGjHsjd-eHWtc=w544-h544-l90-rj", day:"2025年1月29日", hitokoto:"ダンスが特徴的でキャッチ―。この曲を聴くだけで代表的な不規則動詞について勉強することができ、勉学に励む中高生の布教に最適。", 
+            spotify:"https://open.spotify.com/intl-ja/track/7g1eiNRCavhb1SU8PoO2jr?si=e76b459cb76e4d83", 
+            youtube:"https://music.youtube.com/watch?v=uRg_cyNpbu4&si=iC5hlCoCttdRjPYF"}, 
+            
+            
+
+
+        ];
+
+        
+        const entered = document.getElementById("entered");
+        const remained = document.getElementById("remained");
+        const inputText = document.getElementById("inputText");
+        const game = document.getElementById("game");
+        const message = document.getElementById("message");
+        /*const replayBtn = document.getElementById("replayBtn");*/
+
+        const image = document.getElementById("image");
+        const birth = document.getElementById("birth");
+        const blood = document.getElementById("blood");
+        const hometown = document.getElementById("hometown");
+        const name = document.getElementById("name");
+        const miss = document.getElementById("miss");
+        const miss2 = document.getElementById("miss2");
+        const timeout = document.getElementById("timeout");
+        const timeout2 = document.getElementById("timeout2");
+        const count = document.getElementById("count");
+        const dekita = document.getElementById("dekita");
+        const dekita2 = document.getElementById("dekita2");
+        
+        const kyokumei1 = document.getElementById("kyokumei1");
+        const gazou1 = document.getElementById("gazou1");
+        const day1 = document.getElementById("day1");
+        const hitokoto1 = document.getElementById("hitokoto1");
+        const spotify1 = document.getElementById("spotify1");
+        const youtube1 = document.getElementById("youtube1");
+        const kyokumei2 = document.getElementById("kyokumei2");
+        const gazou2 = document.getElementById("gazou2");
+        const day2 = document.getElementById("day2");
+        const hitokoto2 = document.getElementById("hitokoto2");
+        const spotify2 = document.getElementById("spotify2");
+        const youtube2 = document.getElementById("youtube2");
+        
+        const kyokumei3 = document.getElementById("kyokumei3");
+
+        const gazou3 = document.getElementById("gazou3");
+        const day3 = document.getElementById("day3");
+        const hitokoto3 = document.getElementById("hitokoto3");
+        const spotify3 = document.getElementById("spotify3");
+        const youtube3 = document.getElementById("youtube3");
+        const kyokumei4 = document.getElementById("kyokumei4");
+        const gazou4 = document.getElementById("gazou4");
+        const day4 = document.getElementById("day4");
+        const hitokoto4 = document.getElementById("hitokoto4");
+        const spotify4 = document.getElementById("spotify4");
+        const youtube4 = document.getElementById("youtube4");
+        const kyokumei5 = document.getElementById("kyokumei5");
+        const gazou5 = document.getElementById("gazou5");
+        const day5 = document.getElementById("day5");
+        const hitokoto5 = document.getElementById("hitokoto5");
+        const spotify5 = document.getElementById("spotify5");
+        const youtube5 = document.getElementById("youtube5");
+        const kyokumei6 = document.getElementById("kyokumei6");
+        const gazou6 = document.getElementById("gazou6");
+        const day6 = document.getElementById("day6");
+        const hitokoto6 = document.getElementById("hitokoto6");
+        const spotify6 = document.getElementById("spotify6");
+        const youtube6 = document.getElementById("youtube6");
+        const kyokumei7 = document.getElementById("kyokumei7");
+        const gazou7 = document.getElementById("gazou7");
+        const day7 = document.getElementById("day7");
+        const hitokoto7 = document.getElementById("hitokoto7");
+        const spotify7 = document.getElementById("spotify7");
+        const youtube7 = document.getElementById("youtube7");
+        const kyokumei8 = document.getElementById("kyokumei8");
+        const gazou8 = document.getElementById("gazou8");
+        const day8 = document.getElementById("day8");
+        const hitokoto8 = document.getElementById("hitokoto8");
+        const spotify8 = document.getElementById("spotify8");
+        const youtube8 = document.getElementById("youtube8");
+        const kyokumei9 = document.getElementById("kyokumei9");
+        const gazou9 = document.getElementById("gazou9");
+        const day9 = document.getElementById("day9");
+        const hitokoto9 = document.getElementById("hitokoto9");
+        const spotify9 = document.getElementById("spotify9");
+        const youtube9 = document.getElementById("youtube9");
+        const kyokumei10 = document.getElementById("kyokumei10");
+        const gazou10 = document.getElementById("gazou10");
+        const day10 = document.getElementById("day10");
+        const hitokoto10 = document.getElementById("hitokoto10");
+        const spotify10 = document.getElementById("spotify10");
+        const youtube10 = document.getElementById("youtube10");
+        /*const kyokumei11 = document.getElementById("kyokumei11");
+        const gazou11 = document.getElementById("gazou11");
+        const day11 = document.getElementById("day11");
+        const hitokoto11 = document.getElementById("hitokoto11");
+        const spotify11 = document.getElementById("spotify11");
+        const youtube11 = document.getElementById("youtube11");
+        const kyokumei12 = document.getElementById("kyokumei12");
+        const gazou12 = document.getElementById("gazou12");
+        const day12 = document.getElementById("day12");
+        const hitokoto12 = document.getElementById("hitokoto12");
+        const spotify12 = document.getElementById("spotify12");
+        const youtube12 = document.getElementById("youtube12");
+        const kyokumei13 = document.getElementById("kyokumei13");
+        const gazou13 = document.getElementById("gazou13");
+        const day13 = document.getElementById("day13");
+        const hitokoto13 = document.getElementById("hitokoto13");
+        const spotify13 = document.getElementById("spotify13");
+        const youtube13 = document.getElementById("youtube13");
+        const kyokumei14 = document.getElementById("kyokumei14");
+        const gazou14 = document.getElementById("gazou14");
+        const day14 = document.getElementById("day14");
+        const hitokoto14 = document.getElementById("hitokoto14");
+        const spotify14 = document.getElementById("spotify14");
+        const youtube14 = document.getElementById("youtube14");
+        const kyokumei15 = document.getElementById("kyokumei15");
+        const gazou15 = document.getElementById("gazou15");
+        const day15 = document.getElementById("day15");
+        const hitokoto15 = document.getElementById("hitokoto15");
+        const spotify15 = document.getElementById("spotify15");
+        const youtube15 = document.getElementById("youtube15");
+        const kyokumei16 = document.getElementById("kyokumei16");
+        const gazou16 = document.getElementById("gazou16");
+        const day16 = document.getElementById("day16");
+        const hitokoto16 = document.getElementById("hitokoto16");
+        const spotify16 = document.getElementById("spotify16");
+        const youtube16 = document.getElementById("youtube16");
+        const kyokumei17 = document.getElementById("kyokumei17");
+        const gazou17 = document.getElementById("gazou17");
+        const day17 = document.getElementById("day17");
+        const hitokoto17 = document.getElementById("hitokoto17");
+        const spotify17 = document.getElementById("spotify17");
+        const youtube17 = document.getElementById("youtube17");
+        const kyokumei18 = document.getElementById("kyokumei18");
+        const gazou18 = document.getElementById("gazou18");
+        const day18 = document.getElementById("day18");
+        const hitokoto18 = document.getElementById("hitokoto18");
+        const spotify18 = document.getElementById("spotify18");
+        const youtube18 = document.getElementById("youtube18");
+        const kyokumei19 = document.getElementById("kyokumei19");
+        const gazou19 = document.getElementById("gazou19");
+        const day19 = document.getElementById("day19");
+        const hitokoto19 = document.getElementById("hitokoto19");
+        const spotify19 = document.getElementById("spotify19");
+        const youtube19 = document.getElementById("youtube19");
+        const kyokumei20 = document.getElementById("kyokumei20");
+        const gazou20 = document.getElementById("gazou20");
+        const day20 = document.getElementById("day20");
+        const hitokoto20 = document.getElementById("hitokoto20");
+        const spotify20 = document.getElementById("spotify20");
+        const youtube20 = document.getElementById("youtube20");*/
+
+
+        
+
+
+
+        
+        
+        
+        
+        
+        gazou1.setAttribute("src", information[0].gazou);
+        day1.textContent=information[0].day;
+        hitokoto1.textContent=information[0].hitokoto;
+        spotify1.setAttribute("href",information[0].spotify);
+        youtube1.setAttribute("href",information[0].youtube);
+        gazou2.setAttribute("src", information[1].gazou);
+        day2.textContent=information[1].day;
+        hitokoto2.textContent=information[1].hitokoto;
+        spotify2.setAttribute("href",information[1].spotify);
+        youtube2.setAttribute("href",information[1].youtube);
+        gazou3.setAttribute("src", information[2].gazou);
+        day3.textContent=information[2].day;
+        hitokoto3.textContent=information[2].hitokoto;
+        spotify3.setAttribute("href",information[2].spotify);
+        youtube3.setAttribute("href",information[2].youtube);
+        gazou4.setAttribute("src", information[3].gazou);
+        day4.textContent=information[3].day;
+        hitokoto4.textContent=information[3].hitokoto;
+        spotify4.setAttribute("href",information[3].spotify);
+        youtube4.setAttribute("href",information[3].youtube);
+        gazou5.setAttribute("src", information[4].gazou);
+        day5.textContent=information[4].day;
+        hitokoto5.textContent=information[4].hitokoto;
+        spotify5.setAttribute("href",information[4].spotify);
+        youtube5.setAttribute("href",information[4].youtube);
+        gazou6.setAttribute("src", information[5].gazou);
+        day6.textContent=information[5].day;
+        hitokoto6.textContent=information[5].hitokoto;
+        spotify6.setAttribute("href",information[5].spotify);
+        youtube6.setAttribute("href",information[5].youtube);
+        gazou7.setAttribute("src", information[6].gazou);
+        day7.textContent=information[6].day;
+        hitokoto7.textContent=information[6].hitokoto;
+        spotify7.setAttribute("href",information[6].spotify);
+        youtube7.setAttribute("href",information[6].youtube);
+        gazou8.setAttribute("src", information[7].gazou);
+        day8.textContent=information[7].day;
+        hitokoto8.textContent=information[7].hitokoto;
+        spotify8.setAttribute("href",information[7].spotify);
+        youtube8.setAttribute("href",information[7].youtube);
+        gazou9.setAttribute("src", information[8].gazou);
+        day9.textContent=information[8].day;
+        hitokoto9.textContent=information[8].hitokoto;
+        spotify9.setAttribute("href",information[8].spotify);
+        youtube9.setAttribute("href",information[8].youtube);
+        gazou10.setAttribute("src", information[9].gazou);
+        day10.textContent=information[9].day;
+        hitokoto10.textContent=information[9].hitokoto;
+        spotify10.setAttribute("href",information[9].spotify);
+        youtube10.setAttribute("href",information[9].youtube);
+        /*gazou11.setAttribute("src", information[10].gazou);
+        day11.textContent=information[10].day;
+        hitokoto11.textContent=information[10].hitokoto;
+        spotify11.setAttribute("href",information[10].spotify);
+        youtube11.setAttribute("href",information[10].youtube);
+        gazou12.setAttribute("src", information[11].gazou);
+        day12.textContent=information[11].day;
+        hitokoto12.textContent=information[11].hitokoto;
+        spotify12.setAttribute("href",information[11].spotify);
+        youtube12.setAttribute("href",information[11].youtube);
+        gazou13.setAttribute("src", information[12].gazou);
+        day13.textContent=information[12].day;
+        hitokoto13.textContent=information[12].hitokoto;
+        spotify13.setAttribute("href",information[12].spotify);
+        youtube13.setAttribute("href",information[12].youtube);
+        gazou14.setAttribute("src", information[13].gazou);
+        day14.textContent=information[13].day;
+        hitokoto14.textContent=information[13].hitokoto;
+        spotify14.setAttribute("href",information[13].spotify);
+        youtube14.setAttribute("href",information[13].youtube);
+        gazou15.setAttribute("src", information[14].gazou);
+        day15.textContent=information[14].day;
+        hitokoto15.textContent=information[14].hitokoto;
+        spotify15.setAttribute("href",information[14].spotify);
+        youtube15.setAttribute("href",information[14].youtube);
+        gazou16.setAttribute("src", information[15].gazou);
+        day16.textContent=information[15].day;
+        hitokoto16.textContent=information[15].hitokoto;
+        spotify16.setAttribute("href",information[15].spotify);
+        youtube16.setAttribute("href",information[15].youtube);
+        gazou17.setAttribute("src", information[16].gazou);
+        day17.textContent=information[16].day;
+        hitokoto17.textContent=information[16].hitokoto;
+        spotify17.setAttribute("href",information[16].spotify);
+        youtube17.setAttribute("href",information[16].youtube);
+        gazou18.setAttribute("src", information[17].gazou);
+        day18.textContent=information[17].day;
+        hitokoto18.textContent=information[17].hitokoto;
+        spotify18.setAttribute("href",information[17].spotify);
+        youtube18.setAttribute("href",information[17].youtube);
+        gazou19.setAttribute("src", information[18].gazou);
+        day19.textContent=information[18].day;
+        hitokoto19.textContent=information[18].hitokoto;
+        spotify19.setAttribute("href",information[18].spotify);
+        youtube19.setAttribute("href",information[18].youtube);
+        gazou20.setAttribute("src", information[19].gazou);
+        day20.textContent=information[19].day;
+        hitokoto20.textContent=information[19].hitokoto;
+        spotify20.setAttribute("href",information[19].spotify);
+        youtube20.setAttribute("href",information[19].youtube);*/
+
+        kyokumei1.textContent=information[0].kyokumei;
+        kyokumei2.textContent=information[1].kyokumei;
+        kyokumei3.textContent=information[2].kyokumei;
+        kyokumei4.textContent=information[3].kyokumei;
+        kyokumei5.textContent=information[4].kyokumei;
+        kyokumei6.textContent=information[5].kyokumei;
+        kyokumei7.textContent=information[6].kyokumei;
+        kyokumei8.textContent=information[7].kyokumei;
+        kyokumei9.textContent=information[8].kyokumei;
+        kyokumei10.textContent=information[9].kyokumei;
+        /*kyokumei11.textContent=information[10].kyokumei;
+        kyokumei12.textContent=information[11].kyokumei;
+        kyokumei13.textContent=information[12].kyokumei;
+        kyokumei14.textContent=information[13].kyokumei;
+        kyokumei15.textContent=information[14].kyokumei;
+        kyokumei16.textContent=information[15].kyokumei;
+        kyokumei17.textContent=information[16].kyokumei;
+        kyokumei18.textContent=information[17].kyokumei;
+        kyokumei19.textContent=information[18].kyokumei;
+        kyokumei20.textContent=information[19].kyokumei;*/
+
+
+        
+
+    </script>
+</body>
+</html>
